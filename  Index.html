@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Rehman Lodhi - SEO Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+    :root {
+        --bg-dark: #0a0a0a;
+        --bg-card: #1a1a1a;
+        --accent: #e8d4b8;
+        --text-primary: #ffffff;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: var(--bg-dark);
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1.5rem 2rem;
+        z-index: 1000;
+        border-bottom: 1px solid var(--border);
+    }
+
+    nav .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent);
+    }
+
+    /* Sections */
+    section {
+        min-height: 100vh;
+        padding: 8rem 2rem 4rem;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Hero Section */
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+        flex-wrap: wrap;
+    }
+
+    .hero-content {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+    }
+
+    .hero .accent-text {
+        color: var(--accent);
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: var(--accent);
+        color: var(--bg-dark);
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(232, 212, 184, 0.3);
+    }
+
+    .hero-image {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile-photo {
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        background: var(--bg-card);
+        border: 3px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        box-shadow: 0 20px 60px rgba(232, 212, 184, 0.2);
+    }
+
+    /* About Section */
+    .about {
+        background: var(--bg-card);
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        text-align: center;
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: var(--accent);
+        margin: 1rem auto 0;
+        border-radius: 2px;
+    }
+
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-secondary);
+    }
+
+    .about-content p {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Services Section */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .service-card {
+        background: var(--bg-card);
+        padding: 2.5rem;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--accent);
+    }
+
+    .service-card p {
+        color: var(--text-secondary);
+    }
+
+    /* Portfolio Section */
+    .portfolio {
+        background: var(--bg-card);
+    }
+
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .portfolio-card {
+        background: var(--bg-dark);
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        transition: transform 0.3s;
+    }
+
+    .portfolio-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .portfolio-image {
+        width: 100%;
+        height: 250px;
+        background: var(--bg-card);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: var(--accent);
+    }
+
+    .portfolio-info {
+        padding: 2rem;
+    }
+
+    .portfolio-info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .portfolio-info p {
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+    }
+
+    .portfolio-placeholder {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: var(--text-secondary);
+    }
+
+    .portfolio-placeholder h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Contact Section */
+    .contact-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 3rem 0;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .contact-item-icon {
+        font-size: 1.5rem;
+    }
+
+    .contact-item a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .social-card {
+        background: var(--bg-card);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        min-width: 200px;
+        text-align: center;
+        transition: border-color 0.3s;
+    }
+
+    .social-card:hover {
+        border-color: var(--accent);
+    }
+
+    .social-icon-placeholder {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--accent);
+    }
+
+    .social-card h4 {
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .social-card a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .social-card a:hover {
+        color: #f5e6d3;
+    }
+
+    .social-card p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+        background: var(--bg-card);
+        padding: 2rem;
+        text-align: center;
+        color: var(--text-secondary);
+        border-top: 1px solid var(--border);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+        }
+
+        .nav-links {
+            gap: 1rem;
+        }
+
+        section {
+            padding: 6rem 1rem 3rem;
+        }
+
+        .profile-photo {
+            width: 250px;
+            height: 250px;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#home" class="logo">ARL</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+```
+<!-- Hero Section -->
+<section id="home">
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>
+                    Hi, I'm <span class="accent-text">Abdul Rehman</span><br>
+                    SEO Specialist
+                </h1>
+                <p class="hero-subtitle">
+                    I help businesses rank higher on Google through data-driven SEO strategies and content that converts.
+                </p>
+                <a href="#contact" class="cta-button">Let's Work Together</a>
+            </div>
+            <div class="hero-image">
+                <div class="profile-photo">
+                    <img src="profile-photo.jpg" alt="Abdul Rehman Lodhi" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>
+                I'm Abdul Rehman, a 17-year-old SEO specialist passionate about helping businesses improve their online visibility and search rankings.
+            </p>
+            <p>
+                Currently enrolled in the Digital Marketing Professional course at PITP-MUET, I combine technical SEO knowledge with strategic insight and modern AI workflows to deliver measurable results.
+            </p>
+            <p>
+                From keyword research to on-page optimization and content strategy, I focus on creating sustainable growth through practical, data-driven approaches. I believe in learning by doing - which is why I'm actively building and optimizing real projects while documenting the entire journey.
+            </p>
+            <p>
+                When I'm not optimizing websites, you'll find me experimenting with new SEO strategies, staying updated with Google's latest algorithm changes, and sharing insights with the LinkedIn community.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+    <div class="container">
+        <h2 class="section-title">Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>Keyword Research</h3>
+                <p>Strategic keyword research targeting high-intent searches that drive qualified traffic and conversions.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>On-Page SEO</h3>
+                <p>Complete on-page optimization including meta tags, content structure, internal linking, and technical improvements.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>SEO Audits</h3>
+                <p>Comprehensive website audits identifying technical issues, content gaps, and opportunities for improvement.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✍️</div>
+                <h3>Content Strategy</h3>
+                <p>Data-driven content strategies that build topical authority and satisfy user search intent.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h3>Blogger & WordPress SEO</h3>
+                <p>Specialized optimization for Blogger.com and WordPress platforms to maximize search visibility.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <h3>Analytics & Reporting</h3>
+                <p>Google Analytics setup, tracking implementation, and actionable insights for continuous improvement.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio">
+    <div class="container">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-placeholder">
+            <h3>🚀 Projects Coming Soon</h3>
+            <p>Currently building case studies and documenting results from live SEO projects.</p>
+            <p style="margin-top: 1rem;">Follow my journey on LinkedIn to see real-time progress!</p>
+        </div>
+        <!-- Uncomment and use this grid when you have projects:
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-image">📱</div>
+                <div class="portfolio-info">
+                    <h3>Project Name</h3>
+                    <p>Brief description of the project and results achieved.</p>
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Let's Work Together</h2>
+        <div class="contact-content">
+            <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                Have an SEO project in mind? Let's talk about how I can help your business rank higher and drive more qualified traffic.
+            </p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-item-icon">📧</span>
+                    <a href="mailto:abdulrlodhi@gmail.com">abdulrlodhi@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-item-icon">💬</span>
+                    <span>WhatsApp: <a href="https://wa.me/923367802925">+92 336 7802925</a></span>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <div class="social-card">
+                    <div class="social-icon-placeholder">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h4><a href="https://www.linkedin.com/in/abdul-rehman-lodhi-digitalsolutions" target="_blank">LinkedIn</a></h4>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon-placeholder">
+                        <i class="fab fa-behance"></i>
+                    </div>
+                    <h4><a href="https://www.behance.net/abdulrlodhi" target="_blank">Behance</a></h4>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon-placeholder">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h4><a href="https://github.com/abdulrlodhi-digital" target="_blank">GitHub</a></h4>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon-placeholder">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h4><a href="https://www.instagram.com/arlodh.i?igsh=OWdoOTNmNHZzeXNk&utm_source=qr" target="_blank">Instagram</a></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Abdul Rehman Lodhi. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Built with passion for SEO excellence.</p>
+    </div>
+</footer>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+```
+
+</body>
+</html>
